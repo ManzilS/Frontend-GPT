@@ -46,6 +46,7 @@ The footer should include links to social media, contact information, and any ot
 
 
 <h1>Content</h1>
+
 ```
 ### About
 This section should introduce your event and its purpose, as well as highlight the main benefits and features for the attendees. You can also mention the theme, format, and duration of the event. For example:
