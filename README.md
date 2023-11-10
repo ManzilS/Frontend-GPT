@@ -2,7 +2,8 @@
 # Frontend-GPT
 OpenAI released their build GPT. I created Frontend-GPT and this is the website it created.
 
-#Prompt
+<h1>Prompt</h1>
+
 ```
 ## Objective
 Create a dynamic, responsive landing page for a hypothetical tech conference using only HTML, CSS, and JavaScript.
@@ -43,9 +44,9 @@ The footer should include links to social media, contact information, and any ot
 - Performance: Optimize the page for performance. Aim for high scores in performance audits (e.g., Lighthouse).
 ```
 
-```
-## Content
 
+<h1>Content</h1>
+```
 ### About
 This section should introduce your event and its purpose, as well as highlight the main benefits and features for the attendees. You can also mention the theme, format, and duration of the event. For example:
 
