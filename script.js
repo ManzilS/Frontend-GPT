@@ -14,7 +14,7 @@ const speakers = [
     name: "Dr. Jane Smith",
     title: "AI Research Pioneer",
     bio: "Leading AI research and innovation for the past decade.",
-    imageUrl: "speaker1.jpg",
+    imageUrl: "https://thispersondoesnotexist.com/",
     socials: {
       linkedin: "#",
       twitter: "#"
