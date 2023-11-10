@@ -16,8 +16,8 @@ const speakers = [
     bio: "Leading AI research and innovation for the past decade.",
     imageUrl: "https://thispersondoesnotexist.com/",
     socials: {
-      linkedin: "#",
-      twitter: "#"
+      linkedin: "linkedin.com",
+      twitter: "twitter.com"
     }
   },
   // Add more speaker objects...
