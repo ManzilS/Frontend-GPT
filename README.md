@@ -3,7 +3,7 @@
 OpenAI released their build GPT. I created Frontend-GPT and this is the website it created.
 
 #Prompt
-``
+```
 ## Objective
 Create a dynamic, responsive landing page for a hypothetical tech conference using only HTML, CSS, and JavaScript.
 
@@ -41,9 +41,9 @@ The footer should include links to social media, contact information, and any ot
 - Animations: Use CSS animations to enhance the user experience, such as smooth scrolling, fade-in effects, etc.
 - Dark Mode: Add a toggle for users to switch between light and dark modes.
 - Performance: Optimize the page for performance. Aim for high scores in performance audits (e.g., Lighthouse).
-``
+```
 
-``
+```
 ## Content
 
 ### About
@@ -74,4 +74,4 @@ This section should provide a clear and detailed overview of the event agenda, i
 | Monday, November 13, 2023 | 3:00 PM - 4:00 PM | Main Hall | Closing remarks and feedback |
 
 To register for the event, please fill out this [form]. If you have any questions or concerns, please contact us at [email] or [phone]. For more information, please visit our [website].
-``
+```
