@@ -1,0 +1,675 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #091236, #1E215D);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.background-animation-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: transparent;
+  pointer-events: none;
+}
+
+.layer1, .layer2, .layer3 {
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+  border-radius: 50%;
+}
+
+.layer1 {
+  width: 400%;
+  height: 400%;
+  top: -150%;
+  left: -150%;
+  animation: rotate 120s linear infinite;
+}
+
+.layer2 {
+  width: 300%;
+  height: 300%;
+  bottom: -100%;
+  right: -100%;
+  animation: rotate 180s linear infinite reverse;
+}
+
+.layer3 {
+  width: 500%;
+  height: 500%;
+  top: -200%;
+  left: -200%;
+  animation: rotate 300s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header .logo {
+  color: #4CAF50;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(135deg, #091236, #1E215D);
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.hero .cta {
+  background: #4CAF50;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero .cta:hover {
+  background-color: #37a34a;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Complex Shapes and Layers */
+.hero-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphic-layer {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+#layer1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+}
+
+#layer2 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: 15%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#layer3 {
+  width: 100px;
+  height: 100px;
+  bottom: 30%;
+  left: 20%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section Enhancements */
+.hero-graphic::before,
+.hero-graphic::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-graphic::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 50%, #4CAF50, transparent 70%);
+  top: -10%;
+  right: -15%;
+  z-index: 0;
+}
+
+.hero-graphic::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at 50%, #ffffff, transparent 60%);
+  bottom: -10%;
+  left: -15%;
+  z-index: 0;
+}
+
+#layer1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at 50%, #ffffff, transparent 70%);
+  top: 20%;
+  left: 10%;
+  animation: rotate 60s linear infinite;
+}
+
+#layer2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 50%, #00B4DB, transparent 70%);
+  bottom: 25%;
+  right: 20%;
+  animation: rotate 90s linear infinite reverse;
+}
+
+#layer3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 50%, #ffffff, transparent 70%);
+  bottom: 10%;
+  left: 30%;
+  animation: rotate 120s linear infinite;
+}
+
+/* Animation for rotating elements */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+/* Additional layered elements with pseudo-elements for intricate designs */
+.graphic-layer::before,
+.graphic-layer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.graphic-layer div.line {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background: #4CAF50;
+  transform-origin: bottom;
+  animation: spin 120s linear infinite;
+}
+
+#layer1::before {
+  width: 80px;
+  height: 80px;
+  background-color: #4CAF50;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px #4CAF50;
+}
+
+#layer1::after {
+  width: 120px;
+  height: 120px;
+  background-color: #00B4DB;
+  bottom: -60px;
+  right: -60px;
+  box-shadow: 0 0 25px #00B4DB;
+}
+
+#layer1 div.line {
+  bottom: 0;
+  left: 50%;
+  animation-duration: 90s;
+}
+
+#layer2 div.line {
+  bottom: 0;
+  left: 50%;
+  animation-duration: 80s;
+}
+
+/* Animation for spinning lines */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Continue adding more details and layers */
+/* Hero Section */
+.hero {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .cta {
+  margin-top: 20px;
+  background: #4CAF50;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Shapes for the Hero Image */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.large {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+}
+
+.medium {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  top: 50px;
+  right: 50px;
+}
+
+.small {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  bottom: 50px;
+  left: 50px;
+}
+
+/* Additional pseudo-elements for more complex shapes */
+
+
+
+
+
+/* Services Section */
+#services {
+  position: relative;
+  background: #fff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.services-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.service-bg-layer {
+  position: absolute;
+  background: radial-gradient(circle at 50%, rgba(255,255,255,0.2), transparent);
+  border-radius: 50%;
+}
+
+#service-bg-layer1 {
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  animation: rotateSlow 120s linear infinite;
+}
+
+#service-bg-layer2 {
+  top: -30%;
+  right: -30%;
+  width: 160%;
+  height: 160%;
+  animation: rotateSlow 90s linear infinite reverse;
+}
+
+@keyframes rotateSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Service Cards */
+.services-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service {
+  background: #f9f9f9;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: calc(33.333% - 2rem); /* Three cards per row */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.service-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+.service h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .service {
+      width: calc(50% - 2rem); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .service {
+      width: calc(100% - 2rem); /* Full width cards on very small screens */
+  }
+}
+
+
+/* Continue with additional styling for other elements within the services section */
+
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation-name: modalopen;
+  animation-duration: 0.4s;
+}
+
+/* Add zoom animation */
+@keyframes modalopen {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Testimonial Navigation Styling */
+.testimonial-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.prev-testimonial, .next-testimonial {
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev-testimonial:hover, .next-testimonial:hover {
+  background-color: #367c39;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Testimonial Section */
+#testimonials {
+  background: linear-gradient(to bottom, #1E215D, #333);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.testimonial {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.testimonial::before {
+  content: '“';
+  font-size: 5rem;
+  color: #4CAF50;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+}
+
+.testimonial::after {
+  content: '”';
+  font-size: 5rem;
+  color: #4CAF50;
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+}
+
+.testimonial p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Continue with additional styling for navigation buttons or indicators */
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-media a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+      padding-top: 20px;
+      text-align: center;
+  }
+
+  nav ul li {
+      display: block;
+      margin-bottom: 10px;
+  }
+}

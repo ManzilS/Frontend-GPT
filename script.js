@@ -1,75 +1,68 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Smooth scrolling for navigation links
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-      link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-      });
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
+});
 
-  // Services Section - Modal Pop-up Logic
-  const services = document.querySelectorAll('.service');
-  const modal = document.querySelector('.modal');
-  const closeModal = document.querySelector('.close-modal');
+// Speakers Data (Sample JSON Object)
+const speakers = [
+  {
+    name: "Dr. Jane Smith",
+    title: "AI Research Pioneer",
+    bio: "Leading AI research and innovation for the past decade.",
+    imageUrl: "https://thispersondoesnotexist.com/",
+    socials: {
+      linkedin: "linkedin.com",
+      twitter: "twitter.com"
+    }
+  },
+  // Add more speaker objects...
+];
 
-  services.forEach(service => {
-      service.addEventListener('click', () => {
-          modal.style.display = 'block';
-      });
+// Function to Render Speakers
+function renderSpeakers(speakersData) {
+  const speakersContainer = document.querySelector('#speakers .container');
+  speakersContainer.innerHTML = speakersData.map(speaker => `
+    <div class="speaker-card">
+      <img src="${speaker.imageUrl}" alt="${speaker.name}" class="img-responsive">
+      <h3>${speaker.name}</h3>
+      <p>${speaker.title}</p>
+      <p>${speaker.bio}</p>
+      <div>
+        <a href="${speaker.socials.linkedin}" aria-label="LinkedIn">LinkedIn</a>
+        <a href="${speaker.socials.twitter}" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Initialize Speakers
+renderSpeakers(speakers);
+
+// Form Validation
+const form = document.getElementById('registration-form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  // Form validation logic here...
+  console.log('Form submitted');
+});
+
+// Schedule Collapsible
+const scheduleItems = document.querySelectorAll('#schedule .day-schedule');
+scheduleItems.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+    // Logic to show/hide details...
   });
+});
 
-  closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-      if(e.target == modal) {
-          modal.style.display = 'none';
-      }
-  });
-
-  // Testimonial Section - Carousel Logic
-  let currentTestimonial = 0;
-  const testimonials = document.querySelectorAll('.testimonial');
-  const nextBtn = document.querySelector('.next-testimonial');
-  const prevBtn = document.querySelector('.prev-testimonial');
-
-  function showTestimonial(index) {
-      testimonials.forEach((testimonial, idx) => {
-          testimonial.style.display = idx === index ? 'block' : 'none';
-      });
-  }
-
-  nextBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-  });
-
-  prevBtn.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTestimonial);
-  });
-
-  showTestimonial(currentTestimonial); // Initialize first testimonial
-
-  // Parallax effect for the Services section background
-  const serviceSection = document.querySelector('#services');
-  serviceSection.addEventListener('mousemove', function (e) {
-      const { offsetX, offsetY, clientWidth, clientHeight } = e;
-      
-      const xPos = (offsetX / clientWidth) - 0.5;
-      const yPos = (offsetY / clientHeight) - 0.5;
-      
-      const layers = document.querySelectorAll('.service-bg-layer');
-      layers.forEach(layer => {
-          const speed = layer.dataset.speed || 1;
-          const xMove = xPos * speed * 40;
-          const yMove = yPos * speed * 40;
-          layer.style.transform = `translate(${xMove}px, ${yMove}px)`;
-      });
-  });
+// Dark Mode Toggle (if applicable)
+const darkModeToggle = document.querySelector('#dark-mode-toggle');
+darkModeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+  // Additional logic for toggling dark mode...
 });
