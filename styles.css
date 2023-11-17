@@ -413,10 +413,19 @@ nav a {
 /* Services Section */
 #services {
   position: relative;
+  background: #fff;
   padding: 4rem 0;
   overflow: hidden;
 }
 
+.services-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
 
 .service-bg-layer {
   position: absolute;
